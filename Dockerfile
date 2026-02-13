@@ -42,8 +42,5 @@ COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # Exponer puerto
 EXPOSE 8080
 RUN chmod -R 775 storage bootstrap/cache
-RUN php artisan config:clear
-RUN php artisan cache:clear
-RUN php artisan route:clear
 # Comando de inicio
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
