@@ -26,11 +26,6 @@ COPY . .
 # Instalar dependencias
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# Optimizar Laravel
-RUN php artisan config:cache && \
-    php artisan route:cache && \
-    php artisan view:cache
-
 # Permisos
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
@@ -46,6 +41,7 @@ COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Exponer puerto
 EXPOSE 8080
+RUN chmod -R 775 storage bootstrap/cache
 
 # Comando de inicio
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
