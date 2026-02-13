@@ -34,6 +34,11 @@ RUN php artisan config:cache && \
 # Permisos
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Crear directorios necesarios
+RUN mkdir -p /var/log/supervisor && \
+    mkdir -p /var/log/nginx && \
+    mkdir -p /var/run
+
 # Copiar configuraciones
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/php-fpm.conf /etc/php82/php-fpm.d/www.conf
