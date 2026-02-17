@@ -443,7 +443,7 @@ $validated = $request->validate([
 **Juan Terán**
 
 - GitHub: [@Juanjt01](https://github.com/Juanjt01)
-- LinkedIn: [Juan Terán](https://www.linkedin.com/in/juan-jos%C3%A9-ter%C3%A1n-triana-b33924261/)
+- LinkedIn: [Juan Terán](https://www.linkedin.com/in/juan-teran-b208b830b/)
 
 ---
 
